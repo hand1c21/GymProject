@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NgvnBqftgIp8RaYX/LTbQFy6NxhuHrPYV5qttd/AK9Ujd2c0h93sh1RfF6hktpu4iQ9vKNJsDUqR+7/QXi3OOQ==",
+  "dgSpecHash": "0A/GK8BFTkvTjnQQPM0pLpzzhsRm/WjT8a3LbYLNUJC5Z2/V2l8WXZCHWSXjEjomB6F66IZ8PCKbn7bewEqyqw==",
   "success": true,
-  "projectFilePath": "H:\\c#\\MyProject\\Bl\\Bl.csproj",
+  "projectFilePath": "H:\\c#\\GymProject\\MyProject\\Bl\\Bl.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

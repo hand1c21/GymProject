@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\c#\\MyProject\\Bl\\Bl.csproj",
+      "projectUniqueName": "H:\\c#\\GymProject\\MyProject\\Bl\\Bl.csproj",
       "projectName": "Bl",
-      "projectPath": "H:\\c#\\MyProject\\Bl\\Bl.csproj",
+      "projectPath": "H:\\c#\\GymProject\\MyProject\\Bl\\Bl.csproj",
       "packagesPath": "C:\\Users\\מילר תהילה\\.nuget\\packages\\",
-      "outputPath": "H:\\c#\\MyProject\\Bl\\obj\\",
+      "outputPath": "H:\\c#\\GymProject\\MyProject\\Bl\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
