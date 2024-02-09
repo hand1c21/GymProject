@@ -8,5 +8,11 @@ namespace Dal.DalApi
 {
     internal interface ICrud<T>
     {
+        T Get(int id);
+        T Add(T entity);
+        T Update(T entity);
+        void Delete(int id);
+
+       
     }
 }

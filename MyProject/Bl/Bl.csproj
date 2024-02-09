@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BlApi\" />
     <Folder Include="BlModels\" />
     <Folder Include="BlServices\" />
   </ItemGroup>
