@@ -12,3 +12,17 @@ H:\C#\MyProject\Dal\obj\Debug\net7.0\refint\Dal.dll
 H:\C#\MyProject\Dal\obj\Debug\net7.0\Dal.pdb
 H:\C#\MyProject\Dal\obj\Debug\net7.0\Dal.genruntimeconfig.cache
 H:\C#\MyProject\Dal\obj\Debug\net7.0\ref\Dal.dll
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.csproj.AssemblyReference.cache
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.GeneratedMSBuildEditorConfig.editorconfig
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.AssemblyInfoInputs.cache
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.AssemblyInfo.cs
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.csproj.CoreCompileInputs.cache
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.dll
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\refint\Dal.dll
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.pdb
+H:\C#\GymProject\MyProject\Dal\bin\Debug\net7.0\Dal.deps.json
+H:\C#\GymProject\MyProject\Dal\bin\Debug\net7.0\Dal.runtimeconfig.json
+H:\C#\GymProject\MyProject\Dal\bin\Debug\net7.0\Dal.dll
+H:\C#\GymProject\MyProject\Dal\bin\Debug\net7.0\Dal.pdb
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\Dal.genruntimeconfig.cache
+H:\C#\GymProject\MyProject\Dal\obj\Debug\net7.0\ref\Dal.dll

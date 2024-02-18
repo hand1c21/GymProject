@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Dal.Do.Models;
+namespace Dal.Models;
 
 public partial class Insurance
 {

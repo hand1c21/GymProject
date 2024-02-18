@@ -1,0 +1,12 @@
+H:\C#\GymProject\MyProject\Bl\bin\Debug\net7.0\Bl.deps.json
+H:\C#\GymProject\MyProject\Bl\bin\Debug\net7.0\Bl.dll
+H:\C#\GymProject\MyProject\Bl\bin\Debug\net7.0\Bl.pdb
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.csproj.AssemblyReference.cache
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.AssemblyInfoInputs.cache
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.AssemblyInfo.cs
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.csproj.CoreCompileInputs.cache
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.dll
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\refint\Bl.dll
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.pdb
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\ref\Bl.dll

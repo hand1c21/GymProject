@@ -1,8 +1,14 @@
+using Dal;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+DBActions db = new DBActions(builder.Configuration);
+string connStr = db.GetConnectionString("MyGymContext");
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

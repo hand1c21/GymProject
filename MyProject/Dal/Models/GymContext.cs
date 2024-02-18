@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dal.Do.Models;
+namespace Dal.Models;
 
 public partial class GymContext : DbContext
 {
@@ -15,30 +15,22 @@ public partial class GymContext : DbContext
     {
     }
 
-    public virtual DbSet<Address> Addresses { get; set; }
-
     public virtual DbSet<Excersizer> Excersizers { get; set; }
 
     public virtual DbSet<Insurance> Insurances { get; set; }
+
+    public virtual DbSet<Lesson> Lessons { get; set; }
 
     public virtual DbSet<Trainer> Trainers { get; set; }
 
     public virtual DbSet<TypeOfTraining> TypeOfTrainings { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\C#\\MyProject\\DB\\Gym.mdf;Integrated Security=True;Connect Timeout=30");
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\C#\\GymProject\\MyProject\\DB\\Gym.mdf;Integrated Security=True;Connect Timeout=30");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Address>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Addresse__3214EC0765222FB9");
-
-            entity.Property(e => e.City).HasMaxLength(50);
-            entity.Property(e => e.Street).HasMaxLength(100);
-        });
-
         modelBuilder.Entity<Excersizer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07A8C14C2C");
@@ -51,10 +43,6 @@ public partial class GymContext : DbContext
             entity.Property(e => e.MobileNumber)
                 .HasMaxLength(10)
                 .IsUnicode(false);
-
-            entity.HasOne(d => d.Address).WithMany(p => p.Excersizers)
-                .HasForeignKey(d => d.AddressId)
-                .HasConstraintName("FK_Excersizers_Addresses");
 
             entity.HasOne(d => d.InsuranceCodeNavigation).WithMany(p => p.Excersizers)
                 .HasForeignKey(d => d.InsuranceCode)
@@ -76,10 +64,33 @@ public partial class GymContext : DbContext
             entity.Property(e => e.InsuranceName).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<Lesson>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Lessons__3214EC07F9B2B535");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.ExcersizerId)
+                .HasMaxLength(10)
+                .IsFixedLength();
+
+            entity.HasOne(d => d.Excersizer).WithMany(p => p.Lessons)
+                .HasForeignKey(d => d.ExcersizerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Excersizer_Lesson");
+
+            entity.HasOne(d => d.Trainer).WithMany(p => p.Lessons)
+                .HasForeignKey(d => d.TrainerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Trainer_Lesson");
+        });
+
         modelBuilder.Entity<Trainer>(entity =>
         {
             entity.HasKey(e => e.Code).HasName("PK__tmp_ms_x__A25C5AA6607ADB41");
 
+            entity.Property(e => e.EmailAddress)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.FirstName).HasMaxLength(50);
             entity.Property(e => e.Id)
                 .HasMaxLength(10)
@@ -88,10 +99,6 @@ public partial class GymContext : DbContext
             entity.Property(e => e.MobileNumber)
                 .HasMaxLength(10)
                 .IsUnicode(false);
-
-            entity.HasOne(d => d.Address).WithMany(p => p.Trainers)
-                .HasForeignKey(d => d.AddressId)
-                .HasConstraintName("FK_Trainers_Addresses");
 
             entity.HasOne(d => d.TypeOfTrainingCodeNavigation).WithMany(p => p.Trainers)
                 .HasForeignKey(d => d.TypeOfTrainingCode)

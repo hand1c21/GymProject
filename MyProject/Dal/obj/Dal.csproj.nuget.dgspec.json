@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\c#\\GymProject\\MyProject\\Dal\\Dal.csproj": {}
+    "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {}
   },
   "projects": {
-    "H:\\c#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
+    "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\c#\\GymProject\\MyProject\\Dal\\Dal.csproj",
+        "projectUniqueName": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "H:\\c#\\GymProject\\MyProject\\Dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\מילר תהילה\\.nuget\\packages\\",
-        "outputPath": "H:\\c#\\GymProject\\MyProject\\Dal\\obj\\",
+        "projectPath": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\טורנר אסתר\\.nuget\\packages\\",
+        "outputPath": "H:\\C#\\GymProject\\MyProject\\Dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\מילר תהילה\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\טורנר אסתר\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
