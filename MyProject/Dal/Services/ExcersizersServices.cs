@@ -1,4 +1,5 @@
 ﻿using Dal.DalApi;
+using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,24 @@ namespace Dal.Services
 {
     internal class ExcersizersServices : IExcersizers
     {
-        public IExcersizers Add(IExcersizers entity)
+        IExcersizers excersizers;
+        public ExcersizersServices(DalManager instance)
+        {
+            excersizers = instance.Excersizers;
+        }
+        
+        public List<Excersizer> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+        
+        public Excersizer Get(int id)
+        {
+
+            throw new NotImplementedException();
+        }
+
+        public Excersizer Add(Excersizer entity)
         {
             throw new NotImplementedException();
         }
@@ -19,12 +37,7 @@ namespace Dal.Services
             throw new NotImplementedException();
         }
 
-        public IExcersizers Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IExcersizers Update(IExcersizers entity)
+        public Excersizer Update(Excersizer entity)
         {
             throw new NotImplementedException();
         }

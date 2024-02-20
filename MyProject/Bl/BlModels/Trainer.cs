@@ -7,7 +7,7 @@ public partial class Trainer
 {
     public int Code { get; set; }
 
-    public string Id { get; set; } = null!;
+    //public string Id { get; set; } = null!;
 
     public string FirstName { get; set; } = null!;
 
@@ -15,17 +15,17 @@ public partial class Trainer
 
     public string MobileNumber { get; set; } = null!;
 
-    public int? AddressId { get; set; }
-
     public int TypeOfTrainingCode { get; set; }
 
-    public int Salary { get; set; }
+    //public int Salary { get; set; }
 
-    public int HourOfWork { get; set; }
+    //public int HourOfWork { get; set; }
 
-    public virtual Address? Address { get; set; }
+    public string? EmailAddress { get; set; }
 
     public virtual ICollection<Excersizer> Excersizers { get; set; } = new List<Excersizer>();
 
-    public virtual TypeOfTraining TypeOfTrainingCodeNavigation { get; set; } = null!;
+    //public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+
+    //public virtual TypeOfTraining TypeOfTrainingCodeNavigation { get; set; } = null!;
 }

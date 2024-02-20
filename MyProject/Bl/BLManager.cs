@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Bl.BlApi;
+using Bl.BlModels;
+using Bl.BlServices;
+using Dal;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +13,23 @@ namespace Bl
 {
     internal class BLManager
     {
-        public ITrainers trainers { get; }
+        public ITrainers Trainers { get; }
         public IExcersizers Excersizers { get; }
+        public ILessons Lessons { get; set; }
         public BLManager()
         {
-            se
+            ServiceCollection services = new ServiceCollection();
+
+            services.AddSingleton<DalManager>();
+            services.AddScoped<ITrainers, TrainersServices>();
+            services.AddScoped<IExcersizers, ExcersizersServices>();
+            services.AddScoped<ILessons, LessonsServices>();
+
+            ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            Trainers = serviceProvider.GetRequiredService<ITrainers>();
+            Excersizers = serviceProvider.GetRequiredService<IExcersizers>();
+            Lessons = serviceProvider.GetRequiredService<ILessons>();
         }
     }
 }

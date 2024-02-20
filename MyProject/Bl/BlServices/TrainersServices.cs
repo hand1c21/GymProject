@@ -10,6 +10,13 @@ namespace Bl.BlServices
 {
     internal class TrainersServices : ITrainers
     {
+        
+
+        public List<Trainer> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public Trainer Add(Trainer entity)
         {
             throw new NotImplementedException();
@@ -24,6 +31,8 @@ namespace Bl.BlServices
         {
             throw new NotImplementedException();
         }
+
+        
 
         public Trainer Update(Trainer entity)
         {

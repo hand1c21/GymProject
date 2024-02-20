@@ -10,3 +10,6 @@ H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.dll
 H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\refint\Bl.dll
 H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.pdb
 H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\ref\Bl.dll
+H:\C#\GymProject\MyProject\Bl\bin\Debug\net7.0\Dal.dll
+H:\C#\GymProject\MyProject\Bl\bin\Debug\net7.0\Dal.pdb
+H:\C#\GymProject\MyProject\Bl\obj\Debug\net7.0\Bl.csproj.CopyComplete

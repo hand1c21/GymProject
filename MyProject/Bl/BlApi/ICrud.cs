@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.DalApi
+namespace Bl.BlApi
 {
     internal interface ICrud<T>
     {
+        List<T> GetAll();
         T Get(int id);
         T Add(T entity);
         T Update(T entity);

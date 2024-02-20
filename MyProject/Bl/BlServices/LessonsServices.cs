@@ -1,4 +1,5 @@
-﻿using Dal.DalApi;
+﻿using Bl.BlApi;
+using Dal;
 using Dal.Models;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.Services
+namespace Bl.BlServices
 {
-    internal class TrainersServices : ITrainers
+    internal class LessonsServices : ILessons
     {
-        public Trainer Add(Trainer entity)
+        Dal.DalApi.ILessons lesson;
+        public LessonsServices(DalManager instance)
+        {
+            this.lesson = instance.Lessons;
+        }
+
+        public List<Lesson> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Lesson Add(Lesson entity)
         {
             throw new NotImplementedException();
         }
@@ -20,17 +32,12 @@ namespace Dal.Services
             throw new NotImplementedException();
         }
 
-        public Trainer Get(int id)
+        public Lesson Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Trainer> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Trainer Update(Trainer entity)
+        public Lesson Update(Lesson entity)
         {
             throw new NotImplementedException();
         }

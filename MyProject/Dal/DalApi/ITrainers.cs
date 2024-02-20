@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal.DalApi
 {
-    internal interface ITrainers:ICrud<Trainer>
+    public interface ITrainers:ICrud<Trainer>
     {
     }
 }

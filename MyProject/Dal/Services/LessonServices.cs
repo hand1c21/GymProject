@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    internal class TrainersServices : ITrainers
+    internal class LessonServices : ILessons
     {
-        public Trainer Add(Trainer entity)
+        public Lesson Add(Lesson entity)
         {
             throw new NotImplementedException();
         }
@@ -20,17 +20,17 @@ namespace Dal.Services
             throw new NotImplementedException();
         }
 
-        public Trainer Get(int id)
+        public Lesson Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Trainer> GetAll()
+        public List<Lesson> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Trainer Update(Trainer entity)
+        public Lesson Update(Lesson entity)
         {
             throw new NotImplementedException();
         }

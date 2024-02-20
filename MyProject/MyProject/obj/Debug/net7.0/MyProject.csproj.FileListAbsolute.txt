@@ -154,3 +154,5 @@ H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\scopedcss\bundle\MyProject
 H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\MyProject.csproj.CopyComplete
 H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\MyProject.genruntimeconfig.cache
 H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\ref\MyProject.dll
+H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\Bl.dll
+H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\Bl.pdb

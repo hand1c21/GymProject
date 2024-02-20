@@ -1148,6 +1148,20 @@
           }
         }
       },
+      "Bl/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Dal": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Bl.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bl.dll": {}
+        }
+      },
       "Dal/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3308,6 +3322,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Bl/1.0.0": {
+      "type": "project",
+      "path": "../Bl/Bl.csproj",
+      "msbuildProject": "../Bl/Bl.csproj"
+    },
     "Dal/1.0.0": {
       "type": "project",
       "path": "../Dal/Dal.csproj",
@@ -3316,7 +3335,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Dal >= 1.0.0",
+      "Bl >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -3348,14 +3367,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
-              "projectPath": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj"
+            "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj": {
+              "projectPath": "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj"
             }
           }
         }
@@ -3404,7 +3424,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

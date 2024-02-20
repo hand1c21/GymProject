@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal.DalApi
 {
-    public interface IExcersizers : ICrud<Excersizer>
+    public interface ILessons : ICrud<Lesson>
     {
     }
 }

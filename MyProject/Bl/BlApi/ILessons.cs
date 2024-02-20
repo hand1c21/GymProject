@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal.DalApi
+namespace Bl.BlApi
 {
-    public interface IExcersizers : ICrud<Excersizer>
+    internal interface ILessons : ICrud<Lesson>
     {
     }
 }
