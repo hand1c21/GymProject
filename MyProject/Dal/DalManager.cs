@@ -19,7 +19,9 @@ namespace Dal
         public DalManager()
         {
             ServiceCollection service = new ServiceCollection();
+
             service.AddSingleton<GymContext>();
+
             service.AddScoped<IExcersizers, ExcersizersServices>();
             service.AddScoped<ITrainers, TrainersServices>();
             service.AddScoped<ILessons, LessonServices>();

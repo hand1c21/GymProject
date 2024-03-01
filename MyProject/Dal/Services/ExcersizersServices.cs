@@ -10,15 +10,16 @@ namespace Dal.Services
 {
     internal class ExcersizersServices : IExcersizers
     {
-        IExcersizers excersizers;
-        public ExcersizersServices(DalManager instance)
+        GymContext Context { get; set; }
+        public ExcersizersServices(GymContext gymContext)
         {
-            excersizers = instance.Excersizers;
+            Context = gymContext;
         }
         
         public List<Excersizer> GetAll()
         {
-            throw new NotImplementedException();
+            List<Excersizer> result = Context.Excersizers.ToList();
+            return result;
         }
         
         public Excersizer Get(int id)

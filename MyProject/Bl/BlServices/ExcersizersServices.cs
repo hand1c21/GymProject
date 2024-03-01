@@ -1,5 +1,8 @@
 ﻿using Bl.BlApi;
 using Bl.BlModels;
+//using Bl.BlModels;
+using Dal;
+//using Dal.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +14,38 @@ namespace Bl.BlServices;
 internal class ExcersizersServices : IExcersizers
 {
     Dal.DalApi.IExcersizers blExcersizers;
-    public ExcersizersServices(BLManager instance)
+    public ExcersizersServices(DalManager instance)
     {
-        blExcersizers = (Dal.DalApi.IExcersizers)instance.Excersizers;
+        this.blExcersizers = instance.Excersizers;
     }
 
-    public List<Excersizer> GetAll()
+    //public List<Bl.BlModels.Excersizer> GetAll()
+    //{
+    //    List<Dal.Models.Excersizer> excersizers = blExcersizers.GetAll();
+    //    List<Bl.BlModels.Excersizer> excersizers1 = new List<BlModels.Excersizer>();
+    //    for (int i = 0; i < excersizers.Count; i++)
+    //    {
+    //        excersizers1.Add(new BlModels.Excersizer { FirstName = excersizers[i].FirstName, Id = excersizers[i].Id, LastName = excersizers[i].LastName, Lessons = (ICollection<BlModels.Lesson>)excersizers[i].Lessons, MobileNumber = excersizers[i].MobileNumber, TrainerCode = excersizers[i].TrainerCode });
+    //    }
+    //    //var list = blExcersizers.GetAll();
+    //    //list.ForEach(e => excersizers.Add(new Excersizer() { Id = e.Id, FirstName = e.FirstName, LastName = e.LastName,
+    //    //    MobileNumber = e.MobileNumber, TrainerCode = e.TrainerCode}));
+    //    return excersizers1;
+    //}
+
+    public List<Bl.BlModels.Excersizer> GetAll()
     {
-        List<BlModels.Excersizer> excersizers = new List<Excersizer>();
-        var list = blExcersizers.GetAll();
-        list.ForEach(e => excersizers.Add(new Excersizer() { Id = e.Id, FirstName = e.FirstName, LastName = e.LastName,
-            MobileNumber = e.MobileNumber, TrainerCode = e.TrainerCode}));
-        return excersizers;
+        //IEnumerable<Excersizer> patients = 
+        //    blExcersizers..Include(patient => patient.Address).ThenInclude(address => address.Street).ThenInclude(street => street.City);
+        List<Dal.Models.Excersizer> excersizers = blExcersizers.GetAll();
+        List<Bl.BlModels.Excersizer> excersizers1 = new List<BlModels.Excersizer>();
+        for (int i = 0; i < excersizers.Count; i++)
+        {
+            excersizers1.Add(new Excersizer(excersizers[i].Id, excersizers[i].FirstName, excersizers[i].LastName, excersizers[i].MobileNumber, excersizers[i].TrainerCode, excersizers[i].InsuranceCode/*, excersizers[i].Lessons*/));
+        }
+        //IEnumerable<Excersizer> ex = excersizers1;
+        
+        return excersizers1;
     }
 
     public Excersizer Get(int id)

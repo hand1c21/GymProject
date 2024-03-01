@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bl.BlApi
 {
-    internal interface ICrud<T>
+    public interface ICrud<T>
     {
         List<T> GetAll();
         T Get(int id);

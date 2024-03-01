@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bl.BlApi
 {
-    internal interface ITrainers : ICrud<Trainer>
+    public interface ITrainers : ICrud<Trainer>
     {
     }
 }

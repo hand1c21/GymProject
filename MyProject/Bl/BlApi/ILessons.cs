@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bl.BlApi
 {
-    internal interface ILessons : ICrud<Lesson>
+    public interface ILessons : ICrud<Lesson>
     {
     }
 }
