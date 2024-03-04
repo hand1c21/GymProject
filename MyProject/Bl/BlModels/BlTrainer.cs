@@ -1,10 +1,24 @@
-﻿using System;
+﻿using Dal.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Bl.BlModels;
 
 public partial class BlTrainer
 {
+    private ICollection<Lesson> lessons;
+
+    public BlTrainer(int code, string firstName, string lastName, string mobileNumber, int typeOfTrainingCode, string? emailAddress, ICollection<Lesson> lessons)
+    {
+        Code = code;
+        FirstName = firstName;
+        LastName = lastName;
+        MobileNumber = mobileNumber;
+        TypeOfTrainingCode = typeOfTrainingCode;
+        EmailAddress = emailAddress;
+        this.lessons = lessons;
+    }
+
     public int Code { get; set; }
 
     //public string Id { get; set; } = null!;

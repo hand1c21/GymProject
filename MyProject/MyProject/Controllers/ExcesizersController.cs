@@ -15,7 +15,6 @@ namespace MyProject.Controllers
         {
             this.excersizer = bl.Excersizers;
         }
-        //IExcersizers contexr;
 
         [HttpGet]
         public ActionResult<List<BlExcersizer>> Get()

@@ -5,8 +5,18 @@ namespace Bl.BlModels;
 
 public partial class BlExcersizer
 {
-    private int insuranceCode;
+    //private int insuranceCode;
     private ICollection<Dal.Models.Lesson> lessons;
+
+    public BlExcersizer(string id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode)
+    {
+        Id = id;
+        FirstName = firstName;
+        LastName = lastName;
+        MobileNumber = mobileNumber;
+        TrainerCode = trainerCode;
+        InsuranceCode = insuranceCode;
+    }
 
     public BlExcersizer(string id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Lesson> lessons)
     {
@@ -15,7 +25,7 @@ public partial class BlExcersizer
         LastName = lastName;
         MobileNumber = mobileNumber;
         TrainerCode = trainerCode;
-        this.insuranceCode = insuranceCode;
+        this.InsuranceCode = insuranceCode;
         this.lessons = lessons;
     }
 
@@ -29,11 +39,11 @@ public partial class BlExcersizer
 
     public int TrainerCode { get; set; }
 
-    //public int InsuranceCode { get; set; }
+    public int InsuranceCode { get; set; }
 
     //public virtual Insurance InsuranceCodeNavigation { get; set; } = null!;
 
-    public virtual ICollection<BlLesson> Lessons { get; set; } = new List<BlLesson>();
+    //public virtual ICollection<BlLesson> Lessons { get; set; } = new List<BlLesson>();
 
     //public virtual Trainer TrainerCodeNavigation { get; set; } = null!;
 }
