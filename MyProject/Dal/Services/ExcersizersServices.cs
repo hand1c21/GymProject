@@ -1,5 +1,6 @@
 ﻿using Dal.DalApi;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,19 +19,21 @@ namespace Dal.Services
         
         public List<Excersizer> GetAll()
         {
-            List<Excersizer> result = Context.Excersizers.ToList();
+            List<Excersizer> result = Context.Excersizers.Include(l => l.Lessons).ToList();
             return result;
         }
         
         public Excersizer Get(int id)
         {
-
-            throw new NotImplementedException();
+            Excersizer excersizer = Context.Excersizers.FirstOrDefault(e => e.Id.Equals(id));
+            return excersizer;
         }
 
         public Excersizer Add(Excersizer entity)
         {
-            throw new NotImplementedException();
+            Context.Excersizers.Add(entity);
+            Context.SaveChanges();
+            return entity;
         }
 
         public void Delete(int id)

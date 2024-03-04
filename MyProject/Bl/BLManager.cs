@@ -13,22 +13,22 @@ namespace Bl;
 
 public class BLManager
 {
-    public ITrainers Trainers { get; }
-    public IExcersizers Excersizers { get; }
-    public ILessons Lessons { get; set; }
+    public IBlTrainers Trainers { get; }
+    public IBlExcersizers Excersizers { get; }
+    public IBlLessons Lessons { get; set; }
     public BLManager()
     {
         ServiceCollection services = new ServiceCollection();
 
         services.AddSingleton<Dal.DalManager>();
-        services.AddScoped<ITrainers, TrainersServices>();
-        services.AddScoped<IExcersizers, ExcersizersServices>();
-        services.AddScoped<ILessons, LessonsServices>();
+        services.AddScoped<IBlTrainers, BlTrainersServices>();
+        services.AddScoped<IBlExcersizers, BlExcersizersServices>();
+        services.AddScoped<IBlLessons, BlLessonsServices>();
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-        Trainers = serviceProvider.GetRequiredService<ITrainers>();
-        Excersizers = serviceProvider.GetRequiredService<IExcersizers>();
-        Lessons = serviceProvider.GetRequiredService<ILessons>();
+        Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
+        Excersizers = serviceProvider.GetRequiredService<IBlExcersizers>();
+        Lessons = serviceProvider.GetRequiredService<IBlLessons>();
     }
 }

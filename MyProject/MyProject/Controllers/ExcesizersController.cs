@@ -3,7 +3,6 @@ using Bl;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Bl.BlApi;
-//using Dal.DalApi;
 
 namespace MyProject.Controllers
 {
@@ -11,7 +10,7 @@ namespace MyProject.Controllers
     [ApiController]
     public class ExcesizersController : ControllerBase
     {
-        IExcersizers excersizer;
+        IBlExcersizers excersizer;
         public ExcesizersController(BLManager bl)
         {
             this.excersizer = bl.Excersizers;
@@ -19,7 +18,7 @@ namespace MyProject.Controllers
         //IExcersizers contexr;
 
         [HttpGet]
-        public ActionResult<List<Excersizer>> Get()
+        public ActionResult<List<BlExcersizer>> Get()
         {
             if(excersizer.GetAll() != null)
             {
@@ -28,5 +27,22 @@ namespace MyProject.Controllers
             return BadRequest();
             //return Ok(contexr.GetAll());
         }
+
+        [HttpGet("{Id}")]
+        public ActionResult<BlExcersizer> GetById(int Id)
+        {
+            if(Id == null)
+                return BadRequest();
+            return Ok(excersizer.Get(Id));
+        }
+
+        [HttpPost]
+        public ActionResult<BlExcersizer> Post(BlExcersizer bl)
+        {
+            if(bl == null)
+                return BadRequest();
+            return Ok(excersizer.Add(bl));
+        }
+
     }
 }
