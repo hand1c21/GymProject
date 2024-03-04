@@ -1,5 +1,6 @@
 ﻿using Bl.BlApi;
 using Dal;
+using Dal.DalApi;
 using Dal.Models;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,20 @@ namespace Bl.BlServices
             this.lesson = instance.Lessons;
         }
 
+
         public List<Lesson> GetAll()
         {
+            //List<Dal.Models.Lesson> lessons =lesson.GetAll();
+            //List < Bl.BlModels.Lesson> lessons1 = new List<BlModels.Lesson>();
+            //for (int i = 0; i < lessons.Count; i++)
+            //{
+            //    lessons1.Add(new Lesson(lessons.Tra, excersizers[i].FirstName, excersizers[i].LastName, excersizers[i].MobileNumber, excersizers[i].TrainerCode, excersizers[i].InsuranceCode/*, excersizers[i].Lessons*/));
+            //}
+            ////IEnumerable<Excersizer> ex = excersizers1;
+
+            //return lessons1;
             throw new NotImplementedException();
+
         }
 
         public Lesson Add(Lesson entity)

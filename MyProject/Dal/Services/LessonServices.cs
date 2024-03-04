@@ -10,6 +10,16 @@ namespace Dal.Services
 {
     internal class LessonServices : ILessons
     {
+        GymContext Context { get; set; }
+        public LessonServices(GymContext gymContext)
+        {
+            Context = gymContext;
+        }
+        public List<Lesson> GetAll()
+        {
+            List<Lesson> result = Context.Lessons.ToList();
+            return result;
+        }
         public Lesson Add(Lesson entity)
         {
             throw new NotImplementedException();
@@ -25,10 +35,7 @@ namespace Dal.Services
             throw new NotImplementedException();
         }
 
-        public List<Lesson> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public Lesson Update(Lesson entity)
         {
