@@ -28,9 +28,9 @@ namespace Dal
 
             ServiceProvider serviceProvider = service.BuildServiceProvider();
 
-            Trainers =  serviceProvider.GetRequiredService<ITrainers>();
-            Excersizers = serviceProvider.GetRequiredService<IExcersizers>();
-            Lessons = serviceProvider.GetRequiredService<ILessons>();
+            this.Trainers =  serviceProvider.GetRequiredService<ITrainers>();
+            this.Excersizers = serviceProvider.GetRequiredService<IExcersizers>();
+            this.Lessons = serviceProvider.GetRequiredService<ILessons>();
         }
     }
 }

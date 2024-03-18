@@ -156,3 +156,5 @@ H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\MyProject.genruntimeconfig
 H:\C#\GymProject\MyProject\MyProject\obj\Debug\net7.0\ref\MyProject.dll
 H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\Bl.dll
 H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\Bl.pdb
+H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\AutoMapper.dll
+H:\C#\GymProject\MyProject\MyProject\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

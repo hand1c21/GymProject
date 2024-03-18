@@ -36,7 +36,7 @@ namespace MyProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BlExcersizer> Post(BlExcersizer bl)
+        public ActionResult<BlExcersizer> Add([FromBody] BlExcersizer bl)
         {
             if(bl == null)
                 return BadRequest();

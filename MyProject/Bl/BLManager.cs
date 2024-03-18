@@ -27,8 +27,8 @@ public class BLManager
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-        Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
-        Excersizers = serviceProvider.GetRequiredService<IBlExcersizers>();
-        Lessons = serviceProvider.GetRequiredService<IBlLessons>();
+        this.Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
+        this.Excersizers = serviceProvider.GetRequiredService<IBlExcersizers>();
+        this.Lessons = serviceProvider.GetRequiredService<IBlLessons>();
     }
 }
