@@ -33,10 +33,10 @@ namespace Dal.Services
         {
             if (Context.Excersizers.Find(entity) == null)
             {
-            Context.Excersizers.Add(entity);
-            Context.SaveChanges();
-            return entity;
-        }
+                Context.Excersizers.Add(entity);
+                Context.SaveChanges();
+                return entity;
+            }
             return null;
         }
 
