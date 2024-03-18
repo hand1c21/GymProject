@@ -60,7 +60,7 @@ internal class BlExcersizersServices : IBlExcersizers
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        blExcersizers.Delete(id);
     }
 
     public BlExcersizer Update(BlExcersizer entity)

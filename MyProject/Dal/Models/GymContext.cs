@@ -33,11 +33,9 @@ public partial class GymContext : DbContext
     {
         modelBuilder.Entity<Excersizer>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07A8C14C2C");
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC0759959953");
 
-            entity.Property(e => e.Id)
-                .HasMaxLength(10)
-                .IsFixedLength();
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.FirstName).HasMaxLength(50);
             entity.Property(e => e.LastName).HasMaxLength(50);
             entity.Property(e => e.MobileNumber)
@@ -66,12 +64,7 @@ public partial class GymContext : DbContext
 
         modelBuilder.Entity<Lesson>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Lessons__3214EC07F9B2B535");
-
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.ExcersizerId)
-                .HasMaxLength(10)
-                .IsFixedLength();
+            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07AB101533");
 
             entity.HasOne(d => d.Excersizer).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.ExcersizerId)

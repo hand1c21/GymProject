@@ -5,7 +5,7 @@ namespace Dal.Models;
 
 public partial class Excersizer
 {
-    public string Id { get; set; } = null!;
+    public int Id { get; set; }
 
     public string FirstName { get; set; } = null!;
 

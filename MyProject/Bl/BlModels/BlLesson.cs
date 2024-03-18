@@ -9,7 +9,7 @@ public partial class BlLesson
 
     public int TrainerId { get; set; }
 
-    public string ExcersizerId { get; set; } = null!;
+    public int ExcersizerId { get; set; }
 
     //public virtual Excersizer Excersizer { get; set; } = null!;
 

@@ -8,17 +8,17 @@ public partial class BlExcersizer
     //private int insuranceCode;
     private ICollection<Dal.Models.Lesson> lessons;
 
-    public BlExcersizer(string id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode)
-    {
-        Id = id;
-        FirstName = firstName;
-        LastName = lastName;
-        MobileNumber = mobileNumber;
-        TrainerCode = trainerCode;
-        InsuranceCode = insuranceCode;
-    }
+    //public BlExcersizer(string id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode)
+    //{
+    //    Id = id;
+    //    FirstName = firstName;
+    //    LastName = lastName;
+    //    MobileNumber = mobileNumber;
+    //    TrainerCode = trainerCode;
+    //    InsuranceCode = insuranceCode;
+    //}
 
-    public BlExcersizer(string id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Lesson> lessons)
+    public BlExcersizer(int id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Lesson> lessons)
     {
         Id = id;
         FirstName = firstName;
@@ -29,7 +29,7 @@ public partial class BlExcersizer
         this.lessons = lessons;
     }
 
-    public string Id { get; set; } = null!;
+    public int Id { get; set; }
 
     public string FirstName { get; set; } = null!;
 

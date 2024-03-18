@@ -31,15 +31,29 @@ namespace Dal.Services
 
         public Excersizer Add(Excersizer entity)
         {
+            if (Context.Excersizers.Find(entity) == null)
+            {
             Context.Excersizers.Add(entity);
             Context.SaveChanges();
             return entity;
         }
+            return null;
+        }
+
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Excersizer excersizer = Get(id);
+            if (excersizer != null)
+            {
+                Context.Excersizers.Remove(excersizer);
+                Context.SaveChanges();
+                Console.WriteLine("succses delete");
+            }
+            Console.WriteLine("couldn't find");
+            //return excersizer;
         }
+
 
         public Excersizer Update(Excersizer entity)
         {
