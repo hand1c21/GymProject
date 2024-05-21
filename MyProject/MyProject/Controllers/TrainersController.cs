@@ -1,6 +1,7 @@
 ﻿using Bl;
 using Bl.BlApi;
 using Bl.BlModels;
+using Dal.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,5 +27,26 @@ namespace MyProject.Controllers
             }
             return BadRequest();
         }
+        [HttpGet("{Id}")]
+        public ActionResult<BlTrainer> GetById(int Id)
+        {
+            if (Id == null)
+                return BadRequest();
+            return Ok(trainers.Get(Id));
+        }
+
+        [HttpPost]
+        public ActionResult<BlTrainer> Add([FromBody] BlTrainer bl)
+        {
+            if (bl == null)
+                return BadRequest();
+            return Ok(trainers.Add(bl));
+        }
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            trainers.Delete(id);
+        }
+
     }
 }

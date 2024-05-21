@@ -1,6 +1,7 @@
-﻿using Bl.BlApi;
+﻿using AutoMapper;
+using Bl.BlApi;
+using Bl.BlDalModels;
 using Bl.BlModels;
-//using Bl.BlModels;
 //using Dal.Models;
 using Dal;
 using Dal.Models;
@@ -16,46 +17,47 @@ namespace Bl.BlServices;
 internal class BlExcersizersServices : IBlExcersizers
 {
     Dal.DalApi.IExcersizers blExcersizers;
-    public BlExcersizersServices(DalManager instance)
+    IMapper map;
+    public BlExcersizersServices(DalManager instance, IMapper mapper)
     {
         this.blExcersizers = instance.Excersizers;
+        this.map = mapper;
     }
 
-    public List<Bl.BlModels.BlExcersizer> GetAll()
+    public List<BlDalExcersizer> GetAll()
     {
-        List<Dal.Models.Excersizer> excersizers = blExcersizers.GetAll();
-        List<Bl.BlModels.BlExcersizer> excersizers1 = new List<BlModels.BlExcersizer>();
+        List<Excersizer> excersizers = blExcersizers.GetAll();
+        List<BlDalExcersizer> excersizers1 = new List<BlDalExcersizer>();
         for (int i = 0; i < excersizers.Count; i++)
         {
-            excersizers1.Add(new BlExcersizer(excersizers[i].Id, excersizers[i].FirstName, excersizers[i].LastName, excersizers[i].MobileNumber, excersizers[i].TrainerCode, excersizers[i].InsuranceCode, excersizers[i].Lessons));
+            excersizers1.Add(map.Map<BlDalExcersizer>(excersizers[i]));
         }
-        ////IEnumerable<Excersizer> ex = excersizers1;
-
         return excersizers1;
     }
 
-    public BlExcersizer Get(int id)
+    public BlDalExcersizer Get(int id)
     {
         Excersizer ex = blExcersizers.Get(id);
         if(ex != null) 
         { 
-            BlExcersizer excersizer = new BlExcersizer(ex.Id , ex.FirstName, ex.LastName, ex.MobileNumber, ex.TrainerCode, ex.InsuranceCode, ex.Lessons);
+            BlExcersizer excersizer = (BlExcersizer)map.Map<BlDalExcersizer>(ex);
             return excersizer;
         }
         return null;
     }
 
-    public BlExcersizer Add(BlExcersizer entity)
+    public BlDalExcersizer Add(BlDalExcersizer entity)
     {
-        Excersizer excersizer = new Excersizer();
-        excersizer.Id = entity.Id;
-        excersizer.FirstName = entity.FirstName;
-        excersizer.LastName = entity.LastName;
-        excersizer.MobileNumber = entity.MobileNumber;
-        excersizer.TrainerCode = entity.TrainerCode;
+        Excersizer excersizer = map.Map<Excersizer>(entity);
+        //excersizer.Id = entity.Id;
+        //excersizer.FirstName = entity.FirstName;
+        //excersizer.LastName = entity.LastName;
+        //excersizer.MobileNumber = entity.MobileNumber;
+        //excersizer.TrainerCode = entity.TrainerCode;
+        //excersizer.InsuranceCode = entity.InsuranceCode;
 
         blExcersizers.Add(excersizer);
-        return entity;
+        return (BlExcersizer)entity;
     }
 
     public void Delete(int id)
@@ -63,8 +65,14 @@ internal class BlExcersizersServices : IBlExcersizers
         blExcersizers.Delete(id);
     }
 
-    public BlExcersizer Update(BlExcersizer entity)
+    public BlDalExcersizer Update(BlDalExcersizer entity)
     {
-        throw new NotImplementedException();
+        Excersizer ex = blExcersizers.Get(entity.Id);
+        if (ex != null)
+        {
+            blExcersizers.Update(ex);
+        }
+        else Add(entity);
+        return (BlExcersizer)entity;
     }
 }

@@ -31,7 +31,7 @@ namespace Dal.Services
 
         public Excersizer Add(Excersizer entity)
         {
-            if (Context.Excersizers.Find(entity) == null)
+            if (Context.Excersizers.Find(entity.Id) == null)
             {
                 Context.Excersizers.Add(entity);
                 Context.SaveChanges();
@@ -39,7 +39,6 @@ namespace Dal.Services
             }
             return null;
         }
-
 
         public void Delete(int id)
         {
@@ -50,13 +49,13 @@ namespace Dal.Services
                 Context.SaveChanges();
                 Console.WriteLine("succses delete");
             }
-            Console.WriteLine("couldn't find");
+            else Console.WriteLine("couldn't find");
             //return excersizer;
         }
 
-
         public Excersizer Update(Excersizer entity)
         {
+            
             throw new NotImplementedException();
         }
     }

@@ -27,7 +27,7 @@ public partial class GymContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\C#\\GymProject\\MyProject\\DB\\Gym.mdf;Integrated Security=True;Connect Timeout=30");
+        => optionsBuilder.UseSqlServer("\nData Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\C#\\GymProject\\MyProject\\DB\\Gym.mdf;Integrated Security=True;Connect Timeout=30\n");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -44,12 +44,10 @@ public partial class GymContext : DbContext
 
             entity.HasOne(d => d.InsuranceCodeNavigation).WithMany(p => p.Excersizers)
                 .HasForeignKey(d => d.InsuranceCode)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Excersizers_Insurance");
 
             entity.HasOne(d => d.TrainerCodeNavigation).WithMany(p => p.Excersizers)
                 .HasForeignKey(d => d.TrainerCode)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Excersizers_Trainers");
         });
 
@@ -68,7 +66,6 @@ public partial class GymContext : DbContext
 
             entity.HasOne(d => d.Excersizer).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.ExcersizerId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Excersizer_Lesson");
 
             entity.HasOne(d => d.Trainer).WithMany(p => p.Lessons)
@@ -95,7 +92,6 @@ public partial class GymContext : DbContext
 
             entity.HasOne(d => d.TypeOfTrainingCodeNavigation).WithMany(p => p.Trainers)
                 .HasForeignKey(d => d.TypeOfTrainingCode)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Trainers_TypeOfTraining");
         });
 

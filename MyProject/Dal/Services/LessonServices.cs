@@ -20,22 +20,38 @@ namespace Dal.Services
             List<Lesson> result = Context.Lessons.ToList();
             return result;
         }
+        public Lesson Get(int id)
+        {
+            Lesson lesson = Context.Lessons.FirstOrDefault(e => e.Id.Equals(id));
+            return lesson;
+        }
+
         public Lesson Add(Lesson entity)
         {
-            throw new NotImplementedException();
+            if (Context.Lessons.Find(entity.Id) == null)
+            {
+                Context.Lessons.Add(entity);
+                Context.SaveChanges();
+                return entity;
+            }
+            return null;
         }
+
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Lesson lesson = Get(id);
+            if (lesson != null)
+            {
+                Context.Lessons.Remove(lesson);
+                Context.SaveChanges();
+                Console.WriteLine("succses delete");
+            }
+            else Console.WriteLine("couldn't find");
+            //return excersizer;
         }
 
-        public Lesson Get(int id)
-        {
-            throw new NotImplementedException();
-        }
 
-        
 
         public Lesson Update(Lesson entity)
         {

@@ -1,4 +1,5 @@
-﻿using Dal.Models;
+﻿using Bl.BlDalModels;
+using Bl.BlModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bl.BlApi
 {
-    public interface IBlLessons : IBlCrud<Lesson>
+    public interface IBlLessons : IBlCrud<BlLesson>
     {
     }
 }

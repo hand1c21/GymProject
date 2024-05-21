@@ -1,4 +1,6 @@
-﻿using Bl.BlApi;
+﻿using AutoMapper;
+//using Bl.AutoMapper;
+using Bl.BlApi;
 using Bl.BlModels;
 using Bl.BlServices;
 //using Dal;
@@ -19,16 +21,19 @@ public class BLManager
     public BLManager()
     {
         ServiceCollection services = new ServiceCollection();
-
+        
+        
         services.AddSingleton<Dal.DalManager>();
+        services.AddAutoMapper(typeof(AutoMapper.AutoMapperProfile));
         services.AddScoped<IBlTrainers, BlTrainersServices>();
         services.AddScoped<IBlExcersizers, BlExcersizersServices>();
         services.AddScoped<IBlLessons, BlLessonsServices>();
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
 
-        this.Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
         this.Excersizers = serviceProvider.GetRequiredService<IBlExcersizers>();
+        this.Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
+        
         this.Lessons = serviceProvider.GetRequiredService<IBlLessons>();
     }
 }

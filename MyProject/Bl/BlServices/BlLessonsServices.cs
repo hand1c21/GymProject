@@ -1,4 +1,5 @@
 ﻿using Bl.BlApi;
+using Bl.BlModels;
 using Dal;
 using Dal.DalApi;
 using Dal.Models;
@@ -12,14 +13,14 @@ namespace Bl.BlServices
 {
     internal class BlLessonsServices : IBlLessons
     {
-        Dal.DalApi.ILessons lesson;
+        Dal.DalApi.ILessons blLessons;
         public BlLessonsServices(DalManager instance)
         {
-            this.lesson = instance.Lessons;
+            this.blLessons = instance.Lessons;
         }
 
 
-        public List<Lesson> GetAll()
+        public List<BlLesson> GetAll()
         {
             //List<Dal.Models.Lesson> lessons =lesson.GetAll();
             //List < Bl.BlModels.Lesson> lessons1 = new List<BlModels.Lesson>();
@@ -34,22 +35,37 @@ namespace Bl.BlServices
 
         }
 
-        public Lesson Add(Lesson entity)
+        public BlLesson Get(int id)
         {
-            throw new NotImplementedException();
+            //Excersizer ex = blExcersizers.Get(id);
+            //if (ex != null)
+            //{
+            //    BlExcersizer excersizer = new BlExcersizer(ex.Id, ex.FirstName, ex.LastName, ex.MobileNumber, ex.TrainerCode, ex.InsuranceCode, ex.Lessons);
+            //    return excersizer;
+            //}
+            return null;
+        }
+
+        public BlLesson Add(BlLesson entity)
+        {
+            //Excersizer excersizer = new Excersizer();
+            //excersizer.Id = entity.Id;
+            //excersizer.FirstName = entity.FirstName;
+            //excersizer.LastName = entity.LastName;
+            //excersizer.MobileNumber = entity.MobileNumber;
+            //excersizer.TrainerCode = entity.TrainerCode;
+            //excersizer.InsuranceCode = entity.InsuranceCode;
+
+            //blExcersizers.Add(excersizer);
+            return entity;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            blLessons.Delete(id);
         }
 
-        public Lesson Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Lesson Update(Lesson entity)
+        public BlLesson Update(BlLesson entity)
         {
             throw new NotImplementedException();
         }

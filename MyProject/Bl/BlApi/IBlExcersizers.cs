@@ -1,4 +1,4 @@
-﻿using Bl.BlModels;
+﻿using Bl.BlDalModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bl.BlApi
 {
-    public interface IBlExcersizers : IBlCrud<BlExcersizer>
+    public interface IBlExcersizers : IBlCrud<BlDalExcersizer>
     {
         //object? Get(string id);
     }

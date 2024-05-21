@@ -1,22 +1,16 @@
-﻿using System;
+﻿using Bl.BlDalModels;
+using System;
 using System.Collections.Generic;
 
 namespace Bl.BlModels;
 
-public partial class BlExcersizer
+public partial class BlExcersizer : BlDalExcersizer
 {
-    //private int insuranceCode;
     private ICollection<Dal.Models.Lesson> lessons;
-
-    //public BlExcersizer(int id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode)
-    //{
-    //    Id = id;
-    //    FirstName = firstName;
-    //    LastName = lastName;
-    //    MobileNumber = mobileNumber;
-    //    TrainerCode = trainerCode;
-    //    InsuranceCode = insuranceCode;
-    //}
+    public BlExcersizer()
+    {
+        
+    }
 
     public BlExcersizer(int id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Lesson> lessons)
     {

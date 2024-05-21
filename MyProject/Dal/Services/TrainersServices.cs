@@ -20,22 +20,37 @@ namespace Dal.Services
             List<Trainer> result = Context.Trainers.ToList();
             return result;
         }
+        public Trainer Get(int id)
+        {
+            Trainer trainer = Context.Trainers.FirstOrDefault(e => e.Id.Equals(id));
+            return trainer;
+        }
+
         public Trainer Add(Trainer entity)
         {
-            throw new NotImplementedException();
+            if (Context.Trainers.Find(entity.Id) == null)
+            {
+                Context.Trainers.Add(entity);
+                Context.SaveChanges();
+                return entity;
+            }
+            return null;
         }
+
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Trainer trainer = Get(id);
+            if (trainer != null)
+            {
+                Context.Trainers.Remove(trainer);
+                Context.SaveChanges();
+                Console.WriteLine("succses delete");
+            }
+            else Console.WriteLine("couldn't find");
+            //return excersizer;
         }
 
-        public Trainer Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-       
 
         public Trainer Update(Trainer entity)
         {

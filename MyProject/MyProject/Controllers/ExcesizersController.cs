@@ -19,7 +19,7 @@ namespace MyProject.Controllers
         [HttpGet]
         public ActionResult<List<BlExcersizer>> Get()
         {
-            if(excersizer.GetAll() != null)
+            if (excersizer.GetAll() != null)
             {
                 return Ok(excersizer.GetAll());
             }
@@ -30,7 +30,7 @@ namespace MyProject.Controllers
         [HttpGet("{Id}")]
         public ActionResult<BlExcersizer> GetById(int Id)
         {
-            if(Id == null)
+            if (Id == null)
                 return BadRequest();
             return Ok(excersizer.Get(Id));
         }
@@ -38,10 +38,15 @@ namespace MyProject.Controllers
         [HttpPost]
         public ActionResult<BlExcersizer> Add([FromBody] BlExcersizer bl)
         {
-            if(bl == null)
+            if (bl == null)
                 return BadRequest();
             return Ok(excersizer.Add(bl));
         }
 
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            excersizer.Delete(id);
+        }
     }
 }
