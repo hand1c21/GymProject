@@ -3,6 +3,7 @@ using Bl;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Bl.BlApi;
+using Bl.BlDalModels;
 
 namespace MyProject.Controllers
 {
@@ -36,7 +37,7 @@ namespace MyProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BlExcersizer> Add([FromBody] BlExcersizer bl)
+        public ActionResult<BlExcersizer> Add([FromBody] BlDalExcersizer bl)
         {
             if (bl == null)
                 return BadRequest();

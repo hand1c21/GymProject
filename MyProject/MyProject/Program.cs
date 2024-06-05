@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSingleton<BLManager>();
 
-DBActions db = new DBActions(builder.Configuration);
+DBActions db = new(builder.Configuration);
 string connStr = db.GetConnectionString("MyGymContext");
 builder.Services.AddDbContext<GymContext>(opt => opt.UseSqlServer(connStr));
 
