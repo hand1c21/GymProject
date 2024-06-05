@@ -42,6 +42,7 @@ namespace MyProject.Controllers
                 return BadRequest();
             return Ok(trainers.Add(bl));
         }
+
         [HttpDelete]
         public void Delete(int id)
         {
