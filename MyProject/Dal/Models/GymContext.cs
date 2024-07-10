@@ -6,31 +6,41 @@ namespace Dal.Models;
 
 public partial class GymContext : DbContext
 {
-    public GymContext()
-    {
-    }
-
     public GymContext(DbContextOptions<GymContext> options)
         : base(options)
     {
     }
 
+    public virtual DbSet<Appointment> Appointments { get; set; }
+
     public virtual DbSet<Excersizer> Excersizers { get; set; }
 
     public virtual DbSet<Insurance> Insurances { get; set; }
 
-    public virtual DbSet<Lesson> Lessons { get; set; }
-
     public virtual DbSet<Trainer> Trainers { get; set; }
+
+    public virtual DbSet<TrainersWorkingDay> TrainersWorkingDays { get; set; }
 
     public virtual DbSet<TypeOfTraining> TypeOfTrainings { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("\nData Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=H:\\C#\\GymProject\\MyProject\\DB\\Gym.mdf;Integrated Security=True;Connect Timeout=30\n");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Appointment>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Appointm__3214EC07A4C4E446");
+
+            entity.Property(e => e.Hour).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Excersizer).WithMany(p => p.Appointments)
+                .HasForeignKey(d => d.ExcersizerId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK_Excersizer_Appointment");
+
+            entity.HasOne(d => d.TrainerCodeNavigation).WithMany(p => p.Appointments)
+                .HasForeignKey(d => d.TrainerCode)
+                .HasConstraintName("FK_Trainer_Appointment");
+        });
+
         modelBuilder.Entity<Excersizer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC0759959953");
@@ -45,10 +55,6 @@ public partial class GymContext : DbContext
             entity.HasOne(d => d.InsuranceCodeNavigation).WithMany(p => p.Excersizers)
                 .HasForeignKey(d => d.InsuranceCode)
                 .HasConstraintName("FK_Excersizers_Insurance");
-
-            entity.HasOne(d => d.TrainerCodeNavigation).WithMany(p => p.Excersizers)
-                .HasForeignKey(d => d.TrainerCode)
-                .HasConstraintName("FK_Excersizers_Trainers");
         });
 
         modelBuilder.Entity<Insurance>(entity =>
@@ -58,20 +64,6 @@ public partial class GymContext : DbContext
             entity.ToTable("Insurance");
 
             entity.Property(e => e.InsuranceName).HasMaxLength(50);
-        });
-
-        modelBuilder.Entity<Lesson>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__tmp_ms_x__3214EC07AB101533");
-
-            entity.HasOne(d => d.Excersizer).WithMany(p => p.Lessons)
-                .HasForeignKey(d => d.ExcersizerId)
-                .HasConstraintName("FK_Excersizer_Lesson");
-
-            entity.HasOne(d => d.Trainer).WithMany(p => p.Lessons)
-                .HasForeignKey(d => d.TrainerId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Trainer_Lesson");
         });
 
         modelBuilder.Entity<Trainer>(entity =>
@@ -93,6 +85,11 @@ public partial class GymContext : DbContext
             entity.HasOne(d => d.TypeOfTrainingCodeNavigation).WithMany(p => p.Trainers)
                 .HasForeignKey(d => d.TypeOfTrainingCode)
                 .HasConstraintName("FK_Trainers_TypeOfTraining");
+        });
+
+        modelBuilder.Entity<TrainersWorkingDay>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Trainers__3214EC070FD33F62");
         });
 
         modelBuilder.Entity<TypeOfTraining>(entity =>

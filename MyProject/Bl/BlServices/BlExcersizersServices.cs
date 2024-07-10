@@ -49,13 +49,6 @@ internal class BlExcersizersServices : IBlExcersizers
     public BlDalExcersizer Add(BlDalExcersizer entity)
     {
         Excersizer excersizer = map.Map<Excersizer>(entity);
-        //excersizer.Id = entity.Id;
-        //excersizer.FirstName = entity.FirstName;
-        //excersizer.LastName = entity.LastName;
-        //excersizer.MobileNumber = entity.MobileNumber;
-        //excersizer.TrainerCode = entity.TrainerCode;
-        //excersizer.InsuranceCode = entity.InsuranceCode;
-
         blExcersizers.Add(excersizer);
         return (BlExcersizer)entity;
     }

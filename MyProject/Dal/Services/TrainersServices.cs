@@ -56,5 +56,11 @@ namespace Dal.Services
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateAppointments(int trainerCode, int day, int start, int end)
+        {
+            TrainersWorkingDay trainersWorkingDay = new(trainerCode, day, start, end);
+            throw new NotImplementedException();
+        }
     }
 }

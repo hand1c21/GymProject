@@ -11,5 +11,7 @@ public partial class Insurance
 
     public int InsuranceDiscountInPercentages { get; set; }
 
+    public int? NumOfLessonsIntitled { get; set; }
+
     public virtual ICollection<Excersizer> Excersizers { get; set; } = new List<Excersizer>();
 }

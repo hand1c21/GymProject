@@ -17,7 +17,7 @@ public class BLManager
 {
     public IBlTrainers Trainers { get; }
     public IBlExcersizers Excersizers { get; }
-    public IBlLessons Lessons { get; set; }
+    public IBlAppointment Appointments { get; set; }
     public BLManager()
     {
         ServiceCollection services = new ServiceCollection();
@@ -27,13 +27,13 @@ public class BLManager
         services.AddAutoMapper(typeof(AutoMapper.AutoMapperProfile));
         services.AddScoped<IBlTrainers, BlTrainersServices>();
         services.AddScoped<IBlExcersizers, BlExcersizersServices>();
-        services.AddScoped<IBlLessons, BlLessonsServices>();
+        services.AddScoped<IBlAppointment, BlAppointmentsServices>();
 
         ServiceProvider serviceProvider = services.BuildServiceProvider();
 
         this.Excersizers = serviceProvider.GetRequiredService<IBlExcersizers>();
         this.Trainers = serviceProvider.GetRequiredService<IBlTrainers>();
         
-        this.Lessons = serviceProvider.GetRequiredService<IBlLessons>();
+        this.Appointments = serviceProvider.GetRequiredService<IBlAppointment>();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Bl;
 using Bl.BlApi;
 using Bl.BlModels;
+using Dal.DalApi;
 using Dal.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,6 @@ namespace MyProject.Controllers
         {
             this.trainers = bl.Trainers;
         }
-        //IExcersizers contexr;
 
         [HttpGet]
         public ActionResult<List<BlTrainer>> Get()
@@ -36,11 +36,21 @@ namespace MyProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BlTrainer> Add([FromBody] BlTrainer bl)
+        public ActionResult<BlTrainer> Add([FromBody] BlTrainer bl, [FromQuery] int startHour, int endHour)
         {
             if (bl == null)
                 return BadRequest();
-            return Ok(trainers.Add(bl));
+            Ok(trainers.Add(bl));
+            Ok((bl.Code, startHour, endHour));
+            return Ok();
+        }
+
+        [HttpPut]
+        public ActionResult<BlTrainer> Update(BlTrainer bl)
+        {
+            if (bl == null)
+                return BadRequest();
+            return Ok(trainers.Update(bl));
         }
 
         [HttpDelete]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bl.BlDalModels;
 
-public partial class BlDalInsurance
+public class BlDalInsurance
 {
     public int Code { get; set; }
 
@@ -11,5 +11,7 @@ public partial class BlDalInsurance
 
     public int InsuranceDiscountInPercentages { get; set; }
 
-    public virtual ICollection<BlDalExcersizer> Excersizers { get; set; } = new List<BlDalExcersizer>();
+    public int? NumOfLessonsIntitled { get; set; }
+
+    //public virtual ICollection<Excersizer> Excersizers { get; set; } = new List<Excersizer>();
 }

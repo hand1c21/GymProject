@@ -37,11 +37,20 @@ namespace MyProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult<BlExcersizer> Add([FromBody] BlDalExcersizer bl)
+        public ActionResult<BlExcersizer> Add([FromBody] BlDalExcersizer bl, [FromQuery] int day, int time)
         {
             if (bl == null)
                 return BadRequest();
+            
             return Ok(excersizer.Add(bl));
+        }
+
+        [HttpPut]
+        public ActionResult<BlExcersizer> Update(BlExcersizer bl)
+        {
+            if (bl == null)
+                return BadRequest();
+            return Ok(excersizer.Update(bl));
         }
 
         [HttpDelete]

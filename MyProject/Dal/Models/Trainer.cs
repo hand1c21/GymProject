@@ -17,15 +17,13 @@ public partial class Trainer
 
     public int TypeOfTrainingCode { get; set; }
 
-    public int Salary { get; set; }
+    public int SalaryForHour { get; set; }
 
     public int HourOfWork { get; set; }
 
     public string? EmailAddress { get; set; }
 
-    public virtual ICollection<Excersizer> Excersizers { get; set; } = new List<Excersizer>();
-
-    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
+    public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
     public virtual TypeOfTraining TypeOfTrainingCodeNavigation { get; set; } = null!;
 }

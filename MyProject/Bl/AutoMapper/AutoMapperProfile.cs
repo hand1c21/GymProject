@@ -15,8 +15,8 @@ namespace Bl.AutoMapper
         public AutoMapperProfile()
         {
             CreateMap<Excersizer, BlDalExcersizer>().ReverseMap();
-            //CreateMap<Trainer, BlDalTrainer>().ReverseMap();
-            //CreateMap<Lesson, BlDalLesson>().ReverseMap();
+            CreateMap<Trainer, BlDalTrainer>().ReverseMap();
+            CreateMap<Appointment, BlDalAppointment>().ReverseMap();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Dal.Services
         
         public List<Excersizer> GetAll()
         {
-            List<Excersizer> result = Context.Excersizers.Include(l => l.Lessons).ToList();
+            List<Excersizer> result = Context.Excersizers.Include(l => l.Appointments).ToList();
             return result;
         }
         
@@ -55,7 +55,7 @@ namespace Dal.Services
 
         public Excersizer Update(Excersizer entity)
         {
-            
+               
             throw new NotImplementedException();
         }
     }

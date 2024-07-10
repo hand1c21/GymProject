@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bl.BlDalModels;
 
-public partial class BlDalTypeOfTraining
+public class BlDalTypeOfTraining
 {
     public int Code { get; set; }
 
@@ -11,5 +11,5 @@ public partial class BlDalTypeOfTraining
 
     public int Price { get; set; }
 
-    public virtual ICollection<BlDalTrainer> Trainers { get; set; } = new List<BlDalTrainer>();
+    //public virtual ICollection<Trainer> Trainers { get; set; } = new List<Trainer>();
 }

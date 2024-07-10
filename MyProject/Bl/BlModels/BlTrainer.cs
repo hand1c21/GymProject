@@ -6,9 +6,9 @@ namespace Bl.BlModels;
 
 public partial class BlTrainer
 {
-    private ICollection<BlLesson> lessons;
+    private ICollection<BlAppointment> appointments;
 
-    public BlTrainer(int code, string firstName, string lastName, string mobileNumber, int typeOfTrainingCode, string? emailAddress, ICollection<BlLesson> lessons)
+    public BlTrainer(int code, string firstName, string lastName, string mobileNumber, int typeOfTrainingCode, string? emailAddress, ICollection<BlAppointment> apoointment)
     {
         Code = code;
         FirstName = firstName;
@@ -16,7 +16,7 @@ public partial class BlTrainer
         MobileNumber = mobileNumber;
         TypeOfTrainingCode = typeOfTrainingCode;
         EmailAddress = emailAddress;
-        this.lessons = lessons;
+        this.appointments = apoointment;
     }
 
     public int Code { get; set; }

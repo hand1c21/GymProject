@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj": {}
+    "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj": {}
   },
   "projects": {
-    "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj": {
+    "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj",
         "projectName": "Bl",
-        "projectPath": "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj",
-        "packagesPath": "C:\\Users\\טורנר אסתר\\.nuget\\packages\\",
-        "outputPath": "H:\\C#\\GymProject\\MyProject\\Bl\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\טורנר אסתר\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
-                "projectPath": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj"
+              "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj"
               }
             }
           }
@@ -42,6 +43,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -73,24 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
+    "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
         "projectName": "Dal",
-        "projectPath": "H:\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
-        "packagesPath": "C:\\Users\\טורנר אסתר\\.nuget\\packages\\",
-        "outputPath": "H:\\C#\\GymProject\\MyProject\\Dal\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\Dal.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Dal\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\טורנר אסתר\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -99,6 +105,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,6 +118,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -144,24 +156,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj": {
+    "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj",
         "projectName": "MyProject",
-        "projectPath": "H:\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj",
-        "packagesPath": "C:\\Users\\טורנר אסתר\\.nuget\\packages\\",
-        "outputPath": "H:\\C#\\GymProject\\MyProject\\MyProject\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\MyProject\\MyProject.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\MyProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\טורנר אסתר\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -170,15 +182,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj": {
-                "projectPath": "H:\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj"
+              "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj": {
+                "projectPath": "C:\\Users\\User\\Documents\\Esti\\C#\\GymProject\\MyProject\\Bl\\Bl.csproj"
               }
             }
           }
@@ -187,6 +199,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -227,7 +244,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

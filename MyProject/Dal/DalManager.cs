@@ -14,7 +14,7 @@ namespace Dal
     {
         public ITrainers Trainers { get; set; }
         public IExcersizers Excersizers { get; set; }
-        public ILessons Lessons { get; set; }
+        public IAppointments Appointment { get; set; }
 
         public DalManager()
         {
@@ -24,13 +24,13 @@ namespace Dal
 
             service.AddScoped<IExcersizers, ExcersizersServices>();
             service.AddScoped<ITrainers, TrainersServices>();
-            service.AddScoped<ILessons, LessonServices>();
+            service.AddScoped<IAppointments, AppointmentServices>();
 
             ServiceProvider serviceProvider = service.BuildServiceProvider();
 
             this.Trainers =  serviceProvider.GetRequiredService<ITrainers>();
             this.Excersizers = serviceProvider.GetRequiredService<IExcersizers>();
-            this.Lessons = serviceProvider.GetRequiredService<ILessons>();
+            this.Appointment = serviceProvider.GetRequiredService<IAppointments>();
         }
     }
 }

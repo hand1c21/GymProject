@@ -1,5 +1,7 @@
 ﻿using Bl.BlApi;
+using Bl.BlDalModels;
 using Bl.BlModels;
+using AutoMapper;
 using Dal;
 using Dal.DalApi;
 using Dal.Models;
@@ -11,63 +13,77 @@ using System.Threading.Tasks;
 
 namespace Bl.BlServices
 {
-    internal class BlLessonsServices : IBlLessons
+    internal class BlAppointmentsServices : IBlAppointment
     {
-        Dal.DalApi.ILessons blLessons;
-        public BlLessonsServices(DalManager instance)
+        Dal.DalApi.IAppointments blAppointments;
+        IMapper map;
+        public BlAppointmentsServices(DalManager instance)
         {
-            this.blLessons = instance.Lessons;
+            this.blAppointments = instance.Appointment;
         }
 
 
-        public List<BlLesson> GetAll()
+        public List<BlDalAppointment> GetAll()
         {
-            //List<Dal.Models.Lesson> lessons =lesson.GetAll();
-            //List < Bl.BlModels.Lesson> lessons1 = new List<BlModels.Lesson>();
-            //for (int i = 0; i < lessons.Count; i++)
-            //{
-            //    lessons1.Add(new Lesson(lessons.Tra, excersizers[i].FirstName, excersizers[i].LastName, excersizers[i].MobileNumber, excersizers[i].TrainerCode, excersizers[i].InsuranceCode/*, excersizers[i].Lessons*/));
-            //}
-            ////IEnumerable<Excersizer> ex = excersizers1;
-
-            //return lessons1;
-            throw new NotImplementedException();
+            List<Appointment> excersizers = blAppointments.GetAll();
+            List<BlDalAppointment> excersizers1 = new List<BlDalAppointment>();
+            for (int i = 0; i < excersizers.Count; i++)
+            {
+                excersizers1.Add(map.Map<BlDalAppointment>(excersizers[i]));
+            }
+            return excersizers1;
 
         }
 
-        public BlLesson Get(int id)
+        public BlDalAppointment Get(int id)
         {
-            //Excersizer ex = blExcersizers.Get(id);
-            //if (ex != null)
-            //{
-            //    BlExcersizer excersizer = new BlExcersizer(ex.Id, ex.FirstName, ex.LastName, ex.MobileNumber, ex.TrainerCode, ex.InsuranceCode, ex.Lessons);
-            //    return excersizer;
-            //}
+            Appointment ex = blAppointments.Get(id);
+            if (ex != null)
+            {
+                BlAppointment excersizer = (BlAppointment)map.Map<BlDalAppointment>(ex);
+                return excersizer;
+            }
             return null;
         }
 
-        public BlLesson Add(BlLesson entity)
+        public BlDalAppointment Add(BlDalAppointment entity)
         {
-            //Excersizer excersizer = new Excersizer();
-            //excersizer.Id = entity.Id;
-            //excersizer.FirstName = entity.FirstName;
-            //excersizer.LastName = entity.LastName;
-            //excersizer.MobileNumber = entity.MobileNumber;
-            //excersizer.TrainerCode = entity.TrainerCode;
-            //excersizer.InsuranceCode = entity.InsuranceCode;
-
-            //blExcersizers.Add(excersizer);
-            return entity;
+            Appointment excersizer = map.Map<Appointment>(entity);
+            blAppointments.Add(excersizer);
+            return (BlAppointment)entity;
         }
 
         public void Delete(int id)
         {
-            blLessons.Delete(id);
+            blAppointments.Delete(id);
         }
 
-        public BlLesson Update(BlLesson entity)
+        public BlDalAppointment Update(BlDalAppointment entity)
         {
-            throw new NotImplementedException();
+            Appointment ex = blAppointments.Get(entity.Id);
+            if (ex != null)
+            {
+                blAppointments.Update(ex);
+            }
+            else Add(entity);
+            return (BlAppointment)entity;
+        }
+
+        public string IsTimeSlotAvailable(int excersizerId, int day, int time)
+        {
+            var appointments = blAppointments.GetAll(); // Assume this method retrieves all appointments
+
+            foreach (var appointment in appointments)
+            {
+                if (appointment.Day == day && appointment.Hour.Hour == time)
+                {
+                    appointment.ExcersizerId = excersizerId;
+                    blAppointments.Add(appointment);
+                    return "your appointment was added";
+                }
+            }
+
+            return "could not find an appointment for the hour and day that you selected"; // Time slot is available
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Dal.DalApi;
 using Dal.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +9,29 @@ using System.Threading.Tasks;
 
 namespace Dal.Services
 {
-    internal class LessonServices : ILessons
+    internal class AppointmentServices : IAppointments
     {
         GymContext Context { get; set; }
-        public LessonServices(GymContext gymContext)
+        public AppointmentServices(GymContext gymContext)
         {
             Context = gymContext;
         }
-        public List<Lesson> GetAll()
+        public List<Appointment> GetAll()
         {
-            List<Lesson> result = Context.Lessons.ToList();
+            List<Appointment> result = Context.Appointments.ToList();
             return result;
         }
-        public Lesson Get(int id)
+        public Appointment Get(int id)
         {
-            Lesson lesson = Context.Lessons.FirstOrDefault(e => e.Id.Equals(id));
-            return lesson;
+            Appointment Appointment = Context.Appointments.FirstOrDefault(e => e.Id.Equals(id));
+            return Appointment;
         }
 
-        public Lesson Add(Lesson entity)
+        public Appointment Add(Appointment entity)
         {
-            if (Context.Lessons.Find(entity.Id) == null)
+            if (Context.Appointments.Find(entity.Id) == null)
             {
-                Context.Lessons.Add(entity);
+                Context.Appointments.Add(entity);
                 Context.SaveChanges();
                 return entity;
             }
@@ -40,10 +41,10 @@ namespace Dal.Services
 
         public void Delete(int id)
         {
-            Lesson lesson = Get(id);
-            if (lesson != null)
+            Appointment Appointment = Get(id);
+            if (Appointment != null)
             {
-                Context.Lessons.Remove(lesson);
+                Context.Appointments.Remove(Appointment);
                 Context.SaveChanges();
                 Console.WriteLine("succses delete");
             }
@@ -53,9 +54,42 @@ namespace Dal.Services
 
 
 
-        public Lesson Update(Lesson entity)
+        public Appointment Update(Appointment entity)
         {
             throw new NotImplementedException();
+        }
+
+        public bool IsTimeSlotAvailable(int trainerId, int day, int time)
+        {
+            // Get appointments for the specific trainer on the given date
+            var appointments = Context.Appointments
+                .Where(l => l.TrainerCode == trainerId && l.Day == day)
+                .ToList();
+
+            // Check if the specified time slot is available
+            foreach (var appointment in appointments)
+            {
+                if (appointment.Hour.Hour == time)
+                {
+                    return false; // Time slot is not available
+                }
+            }
+
+            return true; // Time slot is available
+        } 
+
+        public void GenerateAppointments()
+        {
+            var trainers = Context.TrainersWorkingDays.ToList();
+
+            foreach (var trainer in trainers)
+            {
+                for (int i = trainer.StartHour; i <= trainer.EndHour; i++)
+                {
+                    Context.Appointments.Add(new Appointment { TrainerCode = trainer.TrainerCode, Day = trainer.Day, Hour = new DateTime(i) });
+                }
+            }
+            Context.SaveChanges();
         }
     }
 }

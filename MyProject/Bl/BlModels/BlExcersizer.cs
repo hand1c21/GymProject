@@ -6,13 +6,13 @@ namespace Bl.BlModels;
 
 public partial class BlExcersizer : BlDalExcersizer
 {
-    private ICollection<Dal.Models.Lesson> lessons;
+    private ICollection<Dal.Models.Appointment> lessons;
     public BlExcersizer()
     {
         
     }
 
-    public BlExcersizer(int id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Lesson> lessons)
+    public BlExcersizer(int id, string firstName, string lastName, string mobileNumber, int trainerCode, int insuranceCode, ICollection<Dal.Models.Appointment> lessons)
     {
         this.Id = id;
         this.FirstName = firstName;

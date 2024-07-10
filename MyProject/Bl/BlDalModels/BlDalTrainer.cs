@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bl.BlDalModels;
 
-public partial class BlDalTrainer
+public class BlDalTrainer
 {
     public int Code { get; set; }
 
@@ -17,15 +17,13 @@ public partial class BlDalTrainer
 
     public int TypeOfTrainingCode { get; set; }
 
-    public int Salary { get; set; }
+    public int SalaryForHour { get; set; }
 
     public int HourOfWork { get; set; }
 
     public string? EmailAddress { get; set; }
 
-    public virtual ICollection<BlDalExcersizer> Excersizers { get; set; } = new List<BlDalExcersizer>();
+    //public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
 
-    public virtual ICollection<BlDalLesson> Lessons { get; set; } = new List<BlDalLesson>();
-
-    public virtual BlDalTypeOfTraining TypeOfTrainingCodeNavigation { get; set; } = null!;
+    //public virtual TypeOfTraining TypeOfTrainingCodeNavigation { get; set; } = null!;
 }

@@ -13,13 +13,11 @@ public partial class Excersizer
 
     public string MobileNumber { get; set; } = null!;
 
-    public int TrainerCode { get; set; }
-
     public int InsuranceCode { get; set; }
 
+    public int? NumOfLessonsDone { get; set; }
+
+    public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+
     public virtual Insurance InsuranceCodeNavigation { get; set; } = null!;
-
-    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
-
-    public virtual Trainer TrainerCodeNavigation { get; set; } = null!;
 }
